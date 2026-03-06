@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Ticket Booking</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:8px;
+width:320px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#007bff;
+border:none;
+color:white;
+font-size:16px;
+border-radius:4px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🎟 Ticket Booking</h2>
+
+<input type="text" placeholder="Enter your name">
+
+<select>
+<option>Select Movie</option>
+<option>Avengers</option>
+<option>Avatar</option>
+<option>Spider-Man</option>
+</select>
+
+<input type="number" placeholder="Number of Tickets">
+
+<button onclick="bookTicket()">Book Ticket</button>
+
+</div>
+
+<script>
+function bookTicket(){
+
+let name=document.querySelector("input[type='text']").value;
+let movie=document.querySelector("select").value;
+let tickets=document.querySelector("input[type='number']").value;
+
+if(name=="" || movie=="Select Movie" || tickets==""){
+alert("Please fill all details");
+return;
+}
+
+alert("Ticket Booked Successfully!\n\nName: "+name+"\nMovie: "+movie+"\nTickets: "+tickets);
+
+// reset form
+document.querySelector("input[type='text']").value="";
+document.querySelector("select").value="Select Movie";
+document.querySelector("input[type='number']").value="";
+}
+</script>
+</body>
+</html>
